@@ -44,7 +44,7 @@ function Body() {
   }
 
   return (
-    <div>
+    <div className="body-content">
       <h1>Low Light Image Enhancement</h1>
       <div className="content">
         <h3>Upload your Image</h3>
