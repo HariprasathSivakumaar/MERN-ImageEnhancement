@@ -7,7 +7,7 @@ from .exposure_enhancement import enhance_image_exposure
 import numpy as np
 
 app = Flask(__name__)
-CORS(app, origins=["https://image-enhancement-three.vercel.app"])
+CORS(app, origins=["https://image-enhancement-six.vercel.app"])
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
