@@ -6,12 +6,14 @@ const RENDER_URL = "https://imageenhancement.onrender.com";
 function Body() {
   const [file, setFile] = useState(null);
   const [enhancedImage, setEnhancedImage] = useState(null);
+  const [downloadUrl, setDownloadUrl] = useState(null);
   const [loading, setLoading] = useState(false);
 
   async function handleFileChange(e) {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
     setEnhancedImage(null);
+    setDownloadUrl(null);
   }
 
   async function handleEnhance() {
@@ -35,6 +37,7 @@ function Body() {
 
       const url = URL.createObjectURL(new Blob([response.data]));
       setEnhancedImage(url);
+      setDownloadUrl(url);
     } catch (error) {
       console.error("Error uploading file", error);
       alert("An error occurred while processing the image. Please try again.");
@@ -69,6 +72,14 @@ function Body() {
         <button onClick={handleEnhance} disabled={loading}>
           {loading ? "Processing..." : "Enhance"}
         </button>
+
+        {downloadUrl && (
+          <div>
+            <a href={downloadUrl} download="enhanced_image.jpg" className="btn">
+              Download Enhanced Image
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );

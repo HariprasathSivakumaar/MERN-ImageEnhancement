@@ -91,3 +91,14 @@ pre > a {
   font-style: italic;
   font-size: 12px;
 }
+
+.btn {
+  background-color: #b3b4bd;
+  color: #141619;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
